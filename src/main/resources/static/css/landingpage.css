@@ -1,0 +1,106 @@
+:root {
+    font-family: "Inter", sans-serif;
+    --primaryColor: rgba(0, 255, 110, 0.6);
+    --secondaryColor: #FEFEFE;
+    --tertiaryColor: black;
+}
+
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--primaryColor);
+    align-items: center;
+    padding: 20px 50px;
+    box-shadow: 0 1px 8px #ddd;
+}
+
+#nav-title {
+    margin-right: auto;
+    font-family: "Times New Roman", serif;
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+header li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 20px;
+    transition: 0.3s;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--tertiaryColor);
+    transition: 0.3s;
+}
+
+header li:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    background-color: var(--secondaryColor);
+    height: auto;
+    width: auto;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius:10px;
+    width: 300px;
+    height: 200px;
+}
+
+#keyword, #email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    height: 32px;
+}
+
+#search-bar label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: smaller;
+    margin-top: 5px;
+}
+
+#submit-button {
+    display: flex;
+    border:none;
+    height:32px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    font-weight:bold;
+    background: var(--primaryColor);
+}
+
+#submit-button:hover {
+    cursor: pointer;
+}
+
+#keyword, #email, #submit-button {
+    margin: 5px;
+}

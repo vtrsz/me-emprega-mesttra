@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/reset.css">
+        <link rel="stylesheet" href="/css/landingpage.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <title>ME EMPREGA</title>
+    </head>
+    <body>
+            <!-- Navbar -->
+            <header>
+                <h1 id="nav-title">ME EMPREGA</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/docs">Documentação da API</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <form class="form" action="/search" method="POST">
+                    <div id="search-bar">
+                        <label for="keyword">Qual vaga você deseja procurar?</label>
+                        <input type="search" class="input" id="keyword" th:name="keyword" placeholder="Nome da Vaga" required>
+                        <label for="email">Também deseja receber as vagas por email?</label>
+                        <input type="email" class="input" id="email" th:name="email" placeholder="seu@email.com">
+                        <button type="submit" id="submit-button">Encontrar várias oportunidades</button>
+                    </div>
+                </form>
+            </main>
+    </body>
+</html>
