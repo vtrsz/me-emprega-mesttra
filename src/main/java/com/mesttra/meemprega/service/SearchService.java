@@ -23,7 +23,8 @@ public class SearchService {
         Document document = null;
         try {
             document = Jsoup.connect(url)
-                    .userAgent("Edge")
+                    //.userAgent("Edge")
+                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36")
                     .get();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -43,12 +44,12 @@ public class SearchService {
         String jobTitle, jobCompany, jobLocation, jobLink, jobCompanyLink, jobReleaseTime;
         boolean hasTitle, hasCompany, hasLocation, hasJobLink, hasCompanyLink, hasReleaseTime;
         for ( Element job : jobList) {
-            hasTitle = !job.getElementsByClass("base-search-card__title").first().text().equalsIgnoreCase("");
-            hasCompany = !job.getElementsByClass("base-search-card__subtitle").first().text().equalsIgnoreCase("");
-            hasCompanyLink = !job.select("a[href*=/company/]").first().attr("abs:href").isEmpty();
-            hasLocation = !job.getElementsByClass("job-search-card__location").first().text().equalsIgnoreCase("");
-            hasJobLink = !job.select("a[href*=/jobs/view/]").first().attr("abs:href").isEmpty();
-            hasReleaseTime = !job.getElementsByClass("job-search-card__listdate").first().text().equalsIgnoreCase("");
+            hasTitle = !job.getElementsByClass("base-search-card__title").text().equalsIgnoreCase("");
+            hasCompany = !job.getElementsByClass("base-search-card__subtitle").text().equalsIgnoreCase("");
+            hasCompanyLink = !job.select("a[href*=/company/]").attr("abs:href").isEmpty();
+            hasLocation = !job.getElementsByClass("job-search-card__location").text().equalsIgnoreCase("");
+            hasJobLink = !job.select("a[href*=/jobs/view/]").attr("abs:href").isEmpty();
+            hasReleaseTime = !job.getElementsByClass("job-search-card__listdate").text().equalsIgnoreCase("");
 
             if (hasTitle && hasCompany && hasCompanyLink && hasLocation && hasJobLink && hasReleaseTime) {
                 jobTitle = job.getElementsByClass("base-search-card__title").get(0).text();
