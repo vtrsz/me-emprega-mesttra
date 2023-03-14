@@ -1,10 +1,10 @@
-package com.mesttra.meemprega;
+package com.vtrsz.meemprega;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MeEmpregaApplicationTests {
+class MeempregaApplicationTests {
 
 	@Test
 	void contextLoads() {
